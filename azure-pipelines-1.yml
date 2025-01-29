@@ -1,0 +1,29 @@
+# Starter pipeline
+
+
+trigger:
+- master
+
+pool:
+  name: default
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: Application security testing@2024
+  inputs:
+    projectName: 'CxSAST'
+    enableProxy: false
+    enableSastScan: true
+    CheckmarxService: 'CxSAST'
+    enableSastBranching: false
+    fullTeamName: '/CxServer'
+    incScan: false
+    forceScan: true
+    enableDependencyScan: false
