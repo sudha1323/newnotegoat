@@ -9,6 +9,7 @@ trigger:
 pool:
   name: default
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -20,7 +21,7 @@ steps:
 
 - task: Checkmarx AST@3
   inputs:
-    CheckmarxService: 'CxONE connection'
+    CheckmarxService: 'CxONE'
     projectName: '$(Build.Repository.Name)'
     branchName: '$(Build.SourceBranchName)'
     tenantName: 'ast_abdul_ansari'
